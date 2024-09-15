@@ -1,0 +1,830 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9fb;
+  transition: opacity 0.75s, visibility 0.75s;
+  z-index: 100;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #ddd;
+  border-top-color: #7449f5;
+  border-radius: 50%;
+  animation: loading 0.75s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+a {
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  margin: 0rem 0.5rem;
+}
+
+a:hover {
+  color: rgba(152, 190, 36, 1);
+}
+
+/* Header Styles */
+header {
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo img {
+  height: 63px;
+  cursor: pointer;
+  width: 126px;
+  object-fit: cover;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: none;
+}
+
+.navbar .toggle-btn:hover {
+  color: rgba(152, 190, 36, 1);
+}
+
+.contact-button {
+  background: linear-gradient(
+    to right,
+    rgba(152, 190, 36, 1),
+    rgba(30, 97, 140, 1)
+  );
+  height: 50px;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+}
+
+.contact-link {
+  color: #fff;
+}
+
+.contact-link:hover {
+  color: white;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  height: 0;
+  right: 2rem;
+  top: 85px;
+  width: 300px;
+  padding: 0px 10px;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open {
+  display: block;
+  height: 200px;
+}
+
+.dropdown-menu .contact-button {
+  height: 30%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-menu li {
+  margin: 0.8rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  padding: 0rem 8rem 2rem 8rem;
+}
+.hero .main {
+  width: 1000px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.hero-box {
+  position: relative;
+  z-index: 1;
+  top: -320px;
+  left: 0px;
+}
+
+.hero-box .one {
+  position: absolute;
+  width: 9%;
+}
+
+.hero-box .two {
+  position: absolute;
+  left: 35px;
+  top: -5px;
+  width: 10%;
+}
+
+/* Who we are */
+
+.nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: rgba(152, 190, 36, 1);
+}
+
+.display-links {
+  display: flex;
+  gap: 1rem;
+}
+
+li {
+  list-style: none;
+  margin-right: 3rem;
+  font-size: 1.5rem;
+}
+
+i {
+  margin-left: 4rem;
+  font-size: 15px;
+}
+
+.who-we-are {
+  position: relative;
+}
+
+.who {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.backward {
+  position: absolute;
+  left: 592px;
+  top: 55%;
+}
+
+/* Service Section */
+.services {
+  position: relative;
+  margin-top: 180px;
+  width: 100%;
+}
+.service {
+  width: 75%;
+  margin: 0 auto;
+}
+.service-img {
+  width: 100%;
+  object-fit: cover;
+}
+.serback {
+  position: absolute;
+  z-index: -1;
+  top: -25px;
+}
+
+/* Project Section */
+.projects {
+  margin-top: 140px;
+  position: relative;
+}
+.proback {
+  position: absolute;
+  right: 0;
+  top: -180px;
+}
+.project-box {
+  margin: 0 auto;
+  width: 75%;
+}
+.project-img {
+  width: 100%;
+  object-fit: cover;
+}
+/* Testimonials Section */
+
+.testimonial h1 {
+  padding-top: 115px;
+  text-align: center;
+  font-size: 3rem;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.testimonial span {
+  color: rgba(30, 97, 140, 1);
+}
+
+.carousel {
+  height: 600px;
+  perspective: 250px;
+}
+
+.carousel .carousel-item {
+  width: 450px;
+  height: auto;
+  text-align: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    to right,
+    rgba(152, 190, 36, 1),
+    rgba(30, 97, 140, 1)
+  );
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testi {
+  width: 100%;
+}
+
+.img-area {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px auto;
+  overflow: hidden;
+}
+
+.img-area img {
+  width: 100%;
+  height: auto;
+}
+
+.testi p {
+  color: #fff; /* Ensure visibility on the background */
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.testi h4 {
+  font-size: 16px;
+  margin: 0;
+  color: #fff; /* Change color for contrast */
+}
+
+/* Footer */
+
+.footer {
+  position: relative;
+  z-index: -2;
+  margin-top: 123px;
+  background-color: rgba(30, 97, 140, 1);
+  color: white;
+  height: auto;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer ul li a {
+  color: white;
+  font-size: 18px;
+}
+
+.footer .social-links {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer .social-links li {
+  background-color: rgba(152, 190, 36, 1);
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 0;
+}
+
+.footer .social-links li img {
+  width: 100%;
+}
+
+.market {
+  margin-top: 20px;
+  font-size: 148px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+  /* Navbar Adjustments */
+  .header {
+    margin: 0;
+    padding: 1rem 0rem;
+  }
+  .navbar .links,
+  .navbar .contact-button {
+    display: none;
+  }
+
+  .navbar .links {
+    gap: 0rem;
+  }
+
+  .navbar .toggle-btn {
+    display: block;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+
+  /* Hero Section Adjustments */
+  .hero {
+    padding: 1rem 4rem 1rem 4rem;
+    height: 100vh;
+    margin-bottom: 0px;
+  }
+
+  .hero .main {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-box {
+    top: -290px;
+    left: 0px;
+  }
+
+  .hero-box .one {
+    width: 10%;
+  }
+
+  .hero-box .two {
+    width: 10%;
+    top: 0;
+    left: 30px;
+  }
+
+  /* Who We Are Adjustments */
+
+  .who-we-are {
+    width: 100%;
+  }
+
+  .who-we-are .nav {
+    margin-top: 0;
+    padding: 0.5rem 0;
+  }
+
+  .display-links {
+    gap: 0rem;
+  }
+
+  .display-links li {
+    padding: 0 1rem;
+    margin: 0 10px;
+    font-size: 1rem;
+  }
+
+  .display-links li i {
+    margin: 0 1rem 0 1rem;
+    font-size: 0.5rem;
+  }
+
+  .who {
+    width: 100%;
+  }
+
+  .backward {
+    width: 50%;
+    left: 468px;
+  }
+
+  /* Services Section Adjustments */
+  .services {
+    margin-top: 149px;
+    width: 100%;
+  }
+
+  .service-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .serback {
+    top: -18px;
+    width: 25%;
+  }
+
+  /* Projects Section Adjustments */
+  .projects {
+    margin-top: 80px;
+    width: 100%;
+  }
+
+  .project-box {
+    width: 100%;
+    padding: 0px 100px 0px 120px;
+  }
+
+  .proback {
+    top: -26%;
+    width: 10%;
+  }
+
+  /* Footer Adjustments */
+  .footer {
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 98px;
+  }
+
+  .footer ul {
+    margin-left: 40px;
+    gap: 0rem;
+  }
+
+  .footer .social-links {
+    margin-top: 36px;
+    gap: 1rem;
+  }
+
+  .footer .social-links li {
+    width: 40px;
+    height: 40px;
+  }
+
+  .market {
+    font-size: 116px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .links,
+  .navbar .contact-button {
+    display: none;
+  }
+
+  .navbar .links {
+    gap: 0rem;
+  }
+
+  .navbar .toggle-btn {
+    display: block;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+
+  /* Hero Section Adjustments */
+  .hero {
+    padding: 2rem 4rem 0rem 4rem;
+    height: 82vh;
+    margin-bottom: 0px;
+  }
+
+  .hero .main {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-box {
+    top: -210px;
+    left: 0px;
+  }
+
+  .hero-box .one {
+    width: 10%;
+  }
+
+  .hero-box .two {
+    width: 10%;
+    top: 0;
+    left: 30px;
+  }
+
+  /* Who We Are Adjustments */
+
+  .who-we-are {
+    width: 100%;
+  }
+
+  .who-we-are .nav {
+    margin-top: 0px;
+    padding: 0.5rem 0;
+  }
+
+  .display-links {
+    gap: 0rem;
+  }
+
+  .display-links li {
+    padding: 0 1rem;
+    margin: 0 10px;
+    font-size: 0.8rem;
+  }
+
+  .display-links li i {
+    margin: 0 1rem 0 1rem;
+    font-size: 0.5rem;
+  }
+
+  .who {
+    width: 100%;
+  }
+
+  .backward {
+    width: 50%;
+    left: 358px;
+  }
+
+  /* Services Section Adjustments */
+  .services {
+    margin-top: 119px;
+    width: 100%;
+  }
+
+  .service-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .serback {
+    top: -18px;
+    width: 25%;
+  }
+
+  /* Projects Section Adjustments */
+  .projects {
+    margin-top: 80px;
+    width: 100%;
+  }
+
+  .project-box {
+    width: 100%;
+    padding: 0px 100px 0px 100px;
+  }
+
+  .proback {
+    top: -26%;
+    width: 10%;
+  }
+
+  /* Footer Adjustments */
+  .footer {
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 83px;
+  }
+
+  .footer ul {
+    margin-left: 40px;
+    gap: 0rem;
+  }
+
+  .footer .social-links {
+    margin-top: 36px;
+    gap: 1rem;
+  }
+
+  .footer .social-links li {
+    width: 40px;
+    height: 40px;
+  }
+
+  .market {
+    font-size: 89px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Navbar Adjustments */
+
+  header {
+    padding: 0 1rem;
+  }
+
+  .navbar .links,
+  .navbar .contact-button {
+    display: none;
+  }
+
+  .navbar .toggle-btn {
+    display: block;
+  }
+
+  .navbar .logo img {
+    width: 83px;
+  }
+
+  .dropdown-menu {
+    left: 2rem;
+    width: unset;
+    display: none;
+  }
+
+  /* Hero Section Adjustments */
+  .hero {
+    padding: 0rem 3rem 0rem 3rem;
+    height: 50vh;
+    margin-bottom: 0;
+  }
+
+  .hero .main {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-box {
+    top: -163px;
+    left: 0px;
+  }
+
+  .hero-box .one {
+    width: 10%;
+  }
+
+  .hero-box .two {
+    width: 10%;
+    top: 0;
+    left: 18px;
+  }
+
+  /* Who We Are Adjustments */
+
+  .who-we-are {
+    width: 100%;
+  }
+
+  .who-we-are .nav {
+    margin-top: 0;
+    padding: 0.5rem 0;
+  }
+
+  .display-links {
+    gap: 1rem;
+  }
+
+  .display-links li {
+    padding: 0;
+    margin: 0 2px;
+    font-size: 0.7rem;
+  }
+
+  .display-links li i {
+    margin: 0 1rem 0 1rem;
+    font-size: 0.6rem;
+  }
+
+  .who {
+    width: 100%;
+  }
+
+  .backward {
+    width: 50%;
+    left: 267px;
+  }
+
+  /* Services Section Adjustments */
+  .services {
+    margin-top: 79px;
+    width: 100%;
+  }
+
+  .service-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .serback {
+    top: -12px;
+    width: 25%;
+  }
+
+  /* Projects Section Adjustments */
+  .projects {
+    margin-top: 60px;
+    width: 100%;
+  }
+
+  .project-box {
+    width: 100%;
+    padding: 0px 40px 0px 60px;
+  }
+
+  .proback {
+    top: -26%;
+    width: 10%;
+  }
+
+  /* Footer Adjustments */
+  .footer {
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 38px;
+  }
+
+  .footer ul {
+    margin-left: 30px;
+    gap: 0rem;
+  }
+
+  .footer ul li {
+    margin-right: 1.8rem;
+  }
+
+  .footer ul li a {
+    font-size: 10px;
+  }
+
+  .footer .social-links {
+    margin-top: 36px;
+    gap: 1rem;
+  }
+
+  .footer .social-links li {
+    width: 30px;
+    height: 30px;
+  }
+
+  .market {
+    font-size: 64px;
+  }
+}
